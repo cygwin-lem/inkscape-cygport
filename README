@@ -1,0 +1,369 @@
+inkscape
+------------------------------------------
+Inkscape is an open source drawing tool with capabilities similar to
+Illustrator, Freehand, and CorelDraw that uses the W3C standard scalable
+vector graphics  format (SVG). Some supported SVG features include
+basic shapes, paths, text, markers, clones, alpha blending, transforms,
+gradients, and grouping. In addition, Inkscape supports Creative Commons
+meta-data, node-editing, layers, complex path operations, text-on-path,
+and SVG XML editing. It also imports several formats like EPS, Postscript,
+JPEG, PNG, BMP, and TIFF and exports PNG as well as multiple vector-based
+formats.
+
+Runtime requirements:
+  cygwin-1.5.18-1
+  GConf2-2.10.1-1
+  ORBit2-2.12.3-1
+  atk-runtime-1.9.1-1
+  crypt-1.1-1
+  expat-1.95.8-1
+  glib2-runtime-2.6.5-1
+  glibmm24-2.6.1-1
+  gnome-vfs2-2.10.1-1
+  gtk2-x11-runtime-2.6.8-1
+  gtkmm24-2.6.5-1
+  gtkspell-2.0.11-1
+  libXft2-2.1.6-1
+  libart_lgpl2-2.3.17-1
+  libaspell15-0.50.3-1
+  libbonobo2-2.10.1-1
+  libfontconfig1-2.2.2-1
+  libfreetype26-2.1.9-1
+  libgc1-6.6-1
+  libgnomeprint22-2.10.3-1
+  libiconv2-1.9.2-2
+  libintl3-0.14.5-1
+  libpng12-1.2.8-2
+  libpopt0-1.6.4-4
+  libsigc++20-2.0.16-1
+  libxml2-2.6.20-3
+  minires-1.00-1
+  openssl-0.9.8a-1
+  pango-runtime-1.8.1-1
+  perl-5.8.7-4
+  python-2.4.1-1
+  xorg-x11-bin-dlls-6.8.2.0-1
+  zlib-1.2.3-1
+
+Build requirements:
+  cygwin-1.5.18-1
+  autoconf2.5-2.59-3
+  automake1.9-1.9.6-1
+  binutils-20050610-1
+  gawk-3.1.5-1
+  gcc-core-3.4.4-1
+  gcc-g++-3.4.4-1
+  intltool-0.33-1
+  make-3.80-1
+  sed-4.1.4-1
+
+  GConf2-2.10.1-1
+  ORBit2-devel-2.12.3-1
+  aspell-dev-0.50.3-1
+  atk-devel-1.9.1-1
+  crypt-1.1-1
+  expat-1.95.8-1
+  gettext-0.14.5-1
+  glib2-devel-2.6.5-1
+  glibmm24-devel-2.6.1-1
+  gnome-vfs2-2.10.1-1
+  gtk2-x11-devel-2.6.8-1
+  gtkmm24-devel-2.6.5-1
+  gtkspell-2.0.11-1
+  libXft-devel-2.1.6-1
+  libart_lgpl2-2.3.17-1
+  libbonobo2-devel-2.10.1-1
+  libfontconfig-devel-2.2.2-1
+  libfreetype2-devel-2.1.9-1
+  libgc-6.6-1
+  libgnomeprint22-2.10.3-1
+  libiconv-1.9.2-2
+  libpng12-devel-1.2.8-2
+  libsigc++20-devel-2.0.16-1
+  libxml2-devel-2.6.20-3
+  minires-devel-1.00-1
+  openssl-devel-0.9.8a-1
+  pango-devel-1.8.1-1
+  perl-5.8.7-4
+  popt-1.6.4-4
+  python-2.4.1-1
+  xorg-x11-bin-dlls-6.8.2.0-1
+  zlib-1.2.3-1
+
+Canonical website:
+  http://www.inkscape.org/
+
+Canonical download:
+  http://prdownloads.sourceforge.net/inkscape/
+
+-------------------------------------------
+
+Build instructions:
+  unpack inkscape-0.43-1-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  ./inkscape-0.43-1.sh all
+
+This will create:
+  /usr/src/inkscape-0.43-1-src.tar.bz2
+  /usr/src/inkscape-0.43-1.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/bin/inkscape.exe
+  /usr/bin/inkview.exe
+  /usr/share/applications/inkscape.desktop
+  /usr/share/doc/Cygwin/inkscape-0.43.README
+  /usr/share/doc/inkscape-0.43/AUTHORS
+  /usr/share/doc/inkscape-0.43/ChangeLog
+  /usr/share/doc/inkscape-0.43/COPYING
+  /usr/share/doc/inkscape-0.43/COPYING.LIB
+  /usr/share/doc/inkscape-0.43/INSTALL
+  /usr/share/doc/inkscape-0.43/NEWS
+  /usr/share/doc/inkscape-0.43/README
+  /usr/share/inkscape/clipart/inkscape.logo.svg
+  /usr/share/inkscape/clipart/orav.svg
+  /usr/share/inkscape/clipart/README
+  /usr/share/inkscape/clipart/README-ribbon.txt
+  /usr/share/inkscape/clipart/ribbon.svg
+  /usr/share/inkscape/clipart/tux.png
+  /usr/share/inkscape/clipart/tux.svg
+  /usr/share/inkscape/examples/art-nouveau-P3.svg
+  /usr/share/inkscape/examples/data_uri.svg
+  /usr/share/inkscape/examples/eastern-motive-P4G.svg
+  /usr/share/inkscape/examples/flowsample.svg
+  /usr/share/inkscape/examples/gradient.svg
+  /usr/share/inkscape/examples/i18n.svg
+  /usr/share/inkscape/examples/istest.pov
+  /usr/share/inkscape/examples/markers.svg
+  /usr/share/inkscape/examples/README
+  /usr/share/inkscape/examples/stars.svgz
+  /usr/share/inkscape/examples/tesselation-P3.svg
+  /usr/share/inkscape/examples/text-on-path.svg
+  /usr/share/inkscape/examples/tiger.svgz
+  /usr/share/inkscape/extensions/addnodes.inx
+  /usr/share/inkscape/extensions/addnodes.py
+  /usr/share/inkscape/extensions/ai_input.inx
+  /usr/share/inkscape/extensions/ai_output.inx
+  /usr/share/inkscape/extensions/bezmisc.py
+  /usr/share/inkscape/extensions/cubicsuperpath.py
+  /usr/share/inkscape/extensions/dia.inx
+  /usr/share/inkscape/extensions/dia2svg.sh
+  /usr/share/inkscape/extensions/dots.inx
+  /usr/share/inkscape/extensions/dots.py
+  /usr/share/inkscape/extensions/dropshadow.inx
+  /usr/share/inkscape/extensions/dxf_input.inx
+  /usr/share/inkscape/extensions/dxf_output.inx
+  /usr/share/inkscape/extensions/embedimage.inx
+  /usr/share/inkscape/extensions/embedimage.py
+  /usr/share/inkscape/extensions/embed_raster_in_svg.pl
+  /usr/share/inkscape/extensions/epsi_output.inx
+  /usr/share/inkscape/extensions/eps_input.inx
+  /usr/share/inkscape/extensions/ffgeom.py
+  /usr/share/inkscape/extensions/ffmet.inx
+  /usr/share/inkscape/extensions/ffms.inx
+  /usr/share/inkscape/extensions/ffproc.py
+  /usr/share/inkscape/extensions/ffscale.py
+  /usr/share/inkscape/extensions/ffset.inx
+  /usr/share/inkscape/extensions/ffss.inx
+  /usr/share/inkscape/extensions/fretfind.py
+  /usr/share/inkscape/extensions/handles.inx
+  /usr/share/inkscape/extensions/handles.py
+  /usr/share/inkscape/extensions/ill2svg.pl
+  /usr/share/inkscape/extensions/inkex.py
+  /usr/share/inkscape/extensions/inkscape-shadow-white.sh
+  /usr/share/inkscape/extensions/inkscape-shadow.sh
+  /usr/share/inkscape/extensions/interp.inx
+  /usr/share/inkscape/extensions/interp.py
+  /usr/share/inkscape/extensions/kochify.inx
+  /usr/share/inkscape/extensions/kochify.py
+  /usr/share/inkscape/extensions/kochify_load.inx
+  /usr/share/inkscape/extensions/kochify_load.py
+  /usr/share/inkscape/extensions/lindenmayer.inx
+  /usr/share/inkscape/extensions/lindenmayer.py
+  /usr/share/inkscape/extensions/motion.inx
+  /usr/share/inkscape/extensions/motion.py
+  /usr/share/inkscape/extensions/pdf_output.inx
+  /usr/share/inkscape/extensions/ps2dxf.sh
+  /usr/share/inkscape/extensions/ps2epsi.sh
+  /usr/share/inkscape/extensions/ps2pdf.sh
+  /usr/share/inkscape/extensions/ps_input.inx
+  /usr/share/inkscape/extensions/pturtle.py
+  /usr/share/inkscape/extensions/radiusrand.inx
+  /usr/share/inkscape/extensions/radiusrand.py
+  /usr/share/inkscape/extensions/rtree.inx
+  /usr/share/inkscape/extensions/rtree.py
+  /usr/share/inkscape/extensions/simplepath.py
+  /usr/share/inkscape/extensions/simplestyle.py
+  /usr/share/inkscape/extensions/sk2svg.sh
+  /usr/share/inkscape/extensions/sk_input.inx
+  /usr/share/inkscape/extensions/SpSVG.pm
+  /usr/share/inkscape/extensions/straightseg.inx
+  /usr/share/inkscape/extensions/straightseg.py
+  /usr/share/inkscape/extensions/summersnight.inx
+  /usr/share/inkscape/extensions/summersnight.py
+  /usr/share/inkscape/extensions/svgz_input.inx
+  /usr/share/inkscape/extensions/svgz_output.inx
+  /usr/share/inkscape/extensions/svg_dropshadow
+  /usr/share/inkscape/extensions/txt2svg.inx
+  /usr/share/inkscape/extensions/txt2svg.pl
+  /usr/share/inkscape/extensions/wavy.inx
+  /usr/share/inkscape/extensions/wavy.py
+  /usr/share/inkscape/extensions/whirl.inx
+  /usr/share/inkscape/extensions/whirl.py
+  /usr/share/inkscape/extensions/wmf_input.inx
+  /usr/share/inkscape/fonts/README
+  /usr/share/inkscape/gradients/README
+  /usr/share/inkscape/icons/David_icons.svg
+  /usr/share/inkscape/icons/icons.svg
+  /usr/share/inkscape/icons/inkscape.svg
+  /usr/share/inkscape/icons/README.icons
+  /usr/share/inkscape/keyboards/README
+  /usr/share/inkscape/markers/markers.svg
+  /usr/share/inkscape/palettes/README
+  /usr/share/inkscape/palettes/svg.gpl
+  /usr/share/inkscape/palettes/Tango-Palette.gpl
+  /usr/share/inkscape/palettes/webhex.gpl
+  /usr/share/inkscape/palettes/websafe22.gpl
+  /usr/share/inkscape/patterns/README
+  /usr/share/inkscape/screens/about.svg
+  /usr/share/inkscape/screens/keys.fr.svg
+  /usr/share/inkscape/screens/keys.sl.svg
+  /usr/share/inkscape/screens/keys.svg
+  /usr/share/inkscape/templates/A4.svg
+  /usr/share/inkscape/templates/A4_landscape.svg
+  /usr/share/inkscape/templates/black_opaque.svg
+  /usr/share/inkscape/templates/business_card_90x50mm.svg
+  /usr/share/inkscape/templates/CD_cover_300dpi.svg
+  /usr/share/inkscape/templates/default.cs.svg
+  /usr/share/inkscape/templates/default.de.svg
+  /usr/share/inkscape/templates/default.es.svg
+  /usr/share/inkscape/templates/default.fr.svg
+  /usr/share/inkscape/templates/default.hu.svg
+  /usr/share/inkscape/templates/default.it.svg
+  /usr/share/inkscape/templates/default.pl.svg
+  /usr/share/inkscape/templates/default.svg
+  /usr/share/inkscape/templates/default_mm.svg
+  /usr/share/inkscape/templates/default_pt.svg
+  /usr/share/inkscape/templates/desktop_1024x768.svg
+  /usr/share/inkscape/templates/desktop_1600x1200.svg
+  /usr/share/inkscape/templates/desktop_640x480.svg
+  /usr/share/inkscape/templates/desktop_800x600.svg
+  /usr/share/inkscape/templates/icon_16x16.svg
+  /usr/share/inkscape/templates/icon_32x32.svg
+  /usr/share/inkscape/templates/icon_48x48.svg
+  /usr/share/inkscape/templates/icon_64x64.svg
+  /usr/share/inkscape/templates/Letter.svg
+  /usr/share/inkscape/templates/Letter_landscape.svg
+  /usr/share/inkscape/templates/no_borders.svg
+  /usr/share/inkscape/templates/no_layers.svg
+  /usr/share/inkscape/templates/README
+  /usr/share/inkscape/templates/web_banner_468x60.svg
+  /usr/share/inkscape/templates/web_banner_728x90.svg
+  /usr/share/inkscape/templates/white_opaque.svg
+  /usr/share/inkscape/tutorials/gpl-2.svg
+  /usr/share/inkscape/tutorials/making_markers.svg
+  /usr/share/inkscape/tutorials/oldguitar.jpg
+  /usr/share/inkscape/tutorials/potrace-de.png
+  /usr/share/inkscape/tutorials/potrace-fr.png
+  /usr/share/inkscape/tutorials/potrace.png
+  /usr/share/inkscape/tutorials/README
+  /usr/share/inkscape/tutorials/tutorial-advanced.es.svg
+  /usr/share/inkscape/tutorials/tutorial-advanced.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-advanced.ja.svg
+  /usr/share/inkscape/tutorials/tutorial-advanced.sl.svg
+  /usr/share/inkscape/tutorials/tutorial-advanced.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.ca.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.de.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.es.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.ja.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.nn.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.ru.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.sl.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.svg
+  /usr/share/inkscape/tutorials/tutorial-calligraphy.es.svg
+  /usr/share/inkscape/tutorials/tutorial-calligraphy.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-calligraphy.sl.svg
+  /usr/share/inkscape/tutorials/tutorial-calligraphy.svg
+  /usr/share/inkscape/tutorials/tutorial-elements.es.svg
+  /usr/share/inkscape/tutorials/tutorial-elements.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-elements.sl.svg
+  /usr/share/inkscape/tutorials/tutorial-elements.svg
+  /usr/share/inkscape/tutorials/tutorial-shapes.ca.svg
+  /usr/share/inkscape/tutorials/tutorial-shapes.es.svg
+  /usr/share/inkscape/tutorials/tutorial-shapes.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-shapes.ja.svg
+  /usr/share/inkscape/tutorials/tutorial-shapes.sl.svg
+  /usr/share/inkscape/tutorials/tutorial-shapes.svg
+  /usr/share/inkscape/tutorials/tutorial-tips.es.svg
+  /usr/share/inkscape/tutorials/tutorial-tips.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-tips.sl.svg
+  /usr/share/inkscape/tutorials/tutorial-tips.svg
+  /usr/share/inkscape/tutorials/tutorial-tracing.de.svg
+  /usr/share/inkscape/tutorials/tutorial-tracing.es.svg
+  /usr/share/inkscape/tutorials/tutorial-tracing.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-tracing.sl.svg
+  /usr/share/inkscape/tutorials/tutorial-tracing.svg
+  /usr/share/inkscape/tutorials/tux.png
+  /usr/share/inkscape/ui/keybindings.rc
+  /usr/share/inkscape/ui/menus-bars.xml
+  /usr/share/inkscape/ui/toolbox.xml
+  /usr/share/inkscape/ui/units.txt
+  /usr/share/inkscape/ui/units.xml
+  /usr/share/locale/am/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/az/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/be/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/ca/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/cs/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/da/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/de/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/el/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/es/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/es_MX/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/et/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/eu/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/fr/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/ga/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/gl/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/hu/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/it/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/ja/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/mk/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/nb/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/nl/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/nn/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/pa/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/pl/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/pt/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/ru/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/sk/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/sl/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/sr/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/sr@Latn/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/sv/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/tr/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/uk/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/inkscape.mo
+  /usr/share/man/fr/man1/inkscape.1.gz
+  /usr/share/man/man1/inkscape.1.gz
+  /usr/share/man/man1/inkview.1.gz
+  /usr/share/pixmaps/inkscape.png
+
+------------------
+
+Port Notes:
+
+----- version 0.43-1 -----
+Version bump.
+
+----- version 0.42.2-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
