@@ -11,29 +11,29 @@ JPEG, PNG, BMP, and TIFF and exports PNG as well as multiple vector-based
 formats.
 
 Runtime requirements:
-  cygwin-1.5.20-1
+  cygwin-1.5.21-2
   gnome-vfs2-2.14.2-1
-  gtk2-x11-2.8.19-1
+  gtk2-x11-2.8.20-1
   gtkmm24-2.8.8-1
   gtkspell-2.0.11-2
   lcms-1.14-1
   libfontconfig1-2.3.2-1
   libgc1-6.7-1
   libgnomeprint22-2.12.1-2
-  libpopt0-1.6.4-4
+  libpopt0-1.10.4-1
 
 Build requirements:
 (besides corresponding devel packages)
-  cygwin-1.5.20-1
+  cygwin-1.5.21-2
   autoconf2.5-2.59-2
   automake1.9-1.9.6-1
-  binutils-20050610-1
-  cygport-0.2.2-1
+  binutils-20060709-1
+  cygport-0.2.5-1
   gawk-3.1.5-2
   gcc-core-3.4.4-1
   gcc-g++-3.4.4-1
   intltool-0.35.0-1
-  make-3.80-1
+  make-3.81-1
   pkg-config-0.20-1
   sed-4.1.5-1
 
@@ -46,15 +46,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack inkscape-0.43-1-src.tar.bz2
+  unpack inkscape-0.44.1-1-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./inkscape-0.43-1.cygport all
+  cygport ./inkscape-0.44.1-1.cygport all
 
 This will create:
-  /usr/src/inkscape-0.43-1-src.tar.bz2
-  /usr/src/inkscape-0.43-1.tar.bz2
+  /usr/src/inkscape-0.44.1-1-src.tar.bz2
+  /usr/src/inkscape-0.44.1-1.tar.bz2
 
 -------------------------------------------
 
@@ -64,15 +64,15 @@ Files included in the binary package:
   /usr/bin/inkscape.exe
   /usr/bin/inkview.exe
   /usr/share/applications/inkscape.desktop
-  /usr/share/doc/Cygwin/inkscape-0.44.README
-  /usr/share/doc/inkscape-0.44/AUTHORS
-  /usr/share/doc/inkscape-0.44/COPYING
-  /usr/share/doc/inkscape-0.44/COPYING.LIB
-  /usr/share/doc/inkscape-0.44/ChangeLog
-  /usr/share/doc/inkscape-0.44/HACKING.txt
-  /usr/share/doc/inkscape-0.44/INSTALL
-  /usr/share/doc/inkscape-0.44/NEWS
-  /usr/share/doc/inkscape-0.44/README
+  /usr/share/doc/Cygwin/inkscape-0.44.1.README
+  /usr/share/doc/inkscape-0.44.1/AUTHORS
+  /usr/share/doc/inkscape-0.44.1/COPYING
+  /usr/share/doc/inkscape-0.44.1/COPYING.LIB
+  /usr/share/doc/inkscape-0.44.1/ChangeLog
+  /usr/share/doc/inkscape-0.44.1/HACKING.txt
+  /usr/share/doc/inkscape-0.44.1/INSTALL
+  /usr/share/doc/inkscape-0.44.1/NEWS
+  /usr/share/doc/inkscape-0.44.1/README
   /usr/share/inkscape/clipart/README
   /usr/share/inkscape/clipart/README-ribbon.txt
   /usr/share/inkscape/clipart/inkscape.logo.svg
@@ -353,6 +353,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 0.44.1-1 -----
+Version bump.
 
 ----- version 0.44-1 -----
 Version bump.
