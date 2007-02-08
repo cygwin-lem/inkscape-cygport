@@ -11,31 +11,42 @@ JPEG, PNG, BMP, and TIFF and exports PNG as well as multiple vector-based
 formats.
 
 Runtime requirements:
-  cygwin-1.5.21-2
-  gnome-vfs2-2.14.2-1
-  gtk2-x11-2.8.20-1
-  gtkmm24-2.8.8-1
+  cygwin-1.5.24-2
+  gdk-pixbuf2-2.10.9-1
+  glib2-2.12.9-1
+  glibmm24-2.12.5-1
+  gnome-vfs2-2.16.2-1
+  gtk2-x11-2.10.9-1
+  gtkmm24-2.10.6-1
   gtkspell-2.0.11-2
-  lcms-1.14-1
-  libfontconfig1-2.3.2-1
-  libgc1-6.7-1
+  libcairo2-1.2.6-1
+  libfontconfig1-2.3.2-2
+  libfreetype26-2.2.1-1
+  libgc1-6.8-1
   libgnomeprint22-2.12.1-2
+  libintl8-0.15-1
+  liblcms1-1.16-1
+  libpng12-1.2.12-1
   libpopt0-1.10.4-1
+  libsigc++20-2.0.17-1
+  libxml2-2.6.27-1
+  pango-1.14.10-1
+  zlib-1.2.3-2
 
 Build requirements:
 (besides corresponding devel packages)
-  cygwin-1.5.21-2
-  autoconf2.5-2.59-2
-  automake1.9-1.9.6-1
-  binutils-20060709-1
-  cygport-0.2.5-1
-  gawk-3.1.5-2
-  gcc-core-3.4.4-1
-  gcc-g++-3.4.4-1
-  intltool-0.35.0-1
+  cygwin-1.5.24-2
+  autoconf2.5-2.61-1
+  automake1.9-1.9.6-2
+  binutils-20060817-1
+  cygport-0.2.9-1
+  gawk-3.1.5-4
+  gcc-core-3.4.4-3
+  gcc-g++-3.4.4-3
+  intltool-0.35.4-1
   make-3.81-1
-  pkg-config-0.20-1
-  sed-4.1.5-1
+  pkg-config-0.21-1
+  sed-4.1.5-2
 
 Canonical website:
   http://www.inkscape.org/
@@ -46,15 +57,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack inkscape-0.44.1-1-src.tar.bz2
+  unpack inkscape-0.45-1-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./inkscape-0.44.1-1.cygport all
+  cygport ./inkscape-0.45-1.cygport all
 
 This will create:
-  /usr/src/inkscape-0.44.1-1-src.tar.bz2
-  /usr/src/inkscape-0.44.1-1.tar.bz2
+  /usr/src/inkscape-0.45-1-src.tar.bz2
+  /usr/src/inkscape-0.45-1.tar.bz2
 
 -------------------------------------------
 
@@ -64,15 +75,15 @@ Files included in the binary package:
   /usr/bin/inkscape.exe
   /usr/bin/inkview.exe
   /usr/share/applications/inkscape.desktop
-  /usr/share/doc/Cygwin/inkscape-0.44.1.README
-  /usr/share/doc/inkscape-0.44.1/AUTHORS
-  /usr/share/doc/inkscape-0.44.1/COPYING
-  /usr/share/doc/inkscape-0.44.1/COPYING.LIB
-  /usr/share/doc/inkscape-0.44.1/ChangeLog
-  /usr/share/doc/inkscape-0.44.1/HACKING.txt
-  /usr/share/doc/inkscape-0.44.1/INSTALL
-  /usr/share/doc/inkscape-0.44.1/NEWS
-  /usr/share/doc/inkscape-0.44.1/README
+  /usr/share/doc/Cygwin/inkscape-0.45.README
+  /usr/share/doc/inkscape-0.45/AUTHORS
+  /usr/share/doc/inkscape-0.45/COPYING
+  /usr/share/doc/inkscape-0.45/COPYING.LIB
+  /usr/share/doc/inkscape-0.45/ChangeLog
+  /usr/share/doc/inkscape-0.45/HACKING.txt
+  /usr/share/doc/inkscape-0.45/INSTALL
+  /usr/share/doc/inkscape-0.45/NEWS
+  /usr/share/doc/inkscape-0.45/README
   /usr/share/inkscape/clipart/README
   /usr/share/inkscape/clipart/README-ribbon.txt
   /usr/share/inkscape/clipart/inkscape.logo.svg
@@ -81,15 +92,21 @@ Files included in the binary package:
   /usr/share/inkscape/clipart/tux.png
   /usr/share/inkscape/clipart/tux.svg
   /usr/share/inkscape/examples/README
+  /usr/share/inkscape/examples/animated-clock.svg
   /usr/share/inkscape/examples/art-nouveau-P3.svg
+  /usr/share/inkscape/examples/car.svgz
   /usr/share/inkscape/examples/data_uri.svg
   /usr/share/inkscape/examples/eastern-motive-P4G.svg
   /usr/share/inkscape/examples/flowsample.svg
+  /usr/share/inkscape/examples/gallardo.svgz
+  /usr/share/inkscape/examples/glass.svg
+  /usr/share/inkscape/examples/gradient-mesh-experimental.svgz
   /usr/share/inkscape/examples/gradient.svg
   /usr/share/inkscape/examples/i18n.svg
   /usr/share/inkscape/examples/istest.pov
   /usr/share/inkscape/examples/l-systems.svgz
   /usr/share/inkscape/examples/markers.svg
+  /usr/share/inkscape/examples/rope-3D.svg
   /usr/share/inkscape/examples/stars.svgz
   /usr/share/inkscape/examples/tesselation-P3.svg
   /usr/share/inkscape/examples/text-on-path.svg
@@ -102,6 +119,39 @@ Files included in the binary package:
   /usr/share/inkscape/extensions/aisvg.inx
   /usr/share/inkscape/extensions/aisvg.xslt
   /usr/share/inkscape/extensions/bezmisc.py
+  /usr/share/inkscape/extensions/color_brighter.inx
+  /usr/share/inkscape/extensions/color_brighter.py
+  /usr/share/inkscape/extensions/color_custom.inx
+  /usr/share/inkscape/extensions/color_custom.py
+  /usr/share/inkscape/extensions/color_darker.inx
+  /usr/share/inkscape/extensions/color_darker.py
+  /usr/share/inkscape/extensions/color_desaturate.inx
+  /usr/share/inkscape/extensions/color_desaturate.py
+  /usr/share/inkscape/extensions/color_grayscale.inx
+  /usr/share/inkscape/extensions/color_grayscale.py
+  /usr/share/inkscape/extensions/color_lesshue.inx
+  /usr/share/inkscape/extensions/color_lesshue.py
+  /usr/share/inkscape/extensions/color_lesslight.inx
+  /usr/share/inkscape/extensions/color_lesslight.py
+  /usr/share/inkscape/extensions/color_lesssaturation.inx
+  /usr/share/inkscape/extensions/color_lesssaturation.py
+  /usr/share/inkscape/extensions/color_morehue.inx
+  /usr/share/inkscape/extensions/color_morehue.py
+  /usr/share/inkscape/extensions/color_morelight.inx
+  /usr/share/inkscape/extensions/color_morelight.py
+  /usr/share/inkscape/extensions/color_moresaturation.inx
+  /usr/share/inkscape/extensions/color_moresaturation.py
+  /usr/share/inkscape/extensions/color_negative.inx
+  /usr/share/inkscape/extensions/color_negative.py
+  /usr/share/inkscape/extensions/color_removeblue.inx
+  /usr/share/inkscape/extensions/color_removeblue.py
+  /usr/share/inkscape/extensions/color_removegreen.inx
+  /usr/share/inkscape/extensions/color_removegreen.py
+  /usr/share/inkscape/extensions/color_removered.inx
+  /usr/share/inkscape/extensions/color_removered.py
+  /usr/share/inkscape/extensions/color_rgbbarrel.inx
+  /usr/share/inkscape/extensions/color_rgbbarrel.py
+  /usr/share/inkscape/extensions/coloreffect.py
   /usr/share/inkscape/extensions/cspsubdiv.py
   /usr/share/inkscape/extensions/cubicsuperpath.py
   /usr/share/inkscape/extensions/dia.inx
@@ -119,20 +169,21 @@ Files included in the binary package:
   /usr/share/inkscape/extensions/epsi_output.inx
   /usr/share/inkscape/extensions/eqtexsvg.inx
   /usr/share/inkscape/extensions/eqtexsvg.py
+  /usr/share/inkscape/extensions/export_gimp_palette.inx
+  /usr/share/inkscape/extensions/export_gimp_palette.py
   /usr/share/inkscape/extensions/extractimage.inx
   /usr/share/inkscape/extensions/extractimage.py
   /usr/share/inkscape/extensions/ffgeom.py
-  /usr/share/inkscape/extensions/ffmet.inx
-  /usr/share/inkscape/extensions/ffms.inx
-  /usr/share/inkscape/extensions/ffproc.py
-  /usr/share/inkscape/extensions/ffscale.py
-  /usr/share/inkscape/extensions/ffset.inx
-  /usr/share/inkscape/extensions/ffss.inx
   /usr/share/inkscape/extensions/fig2svg.sh
   /usr/share/inkscape/extensions/fig_input.inx
   /usr/share/inkscape/extensions/flatten.inx
   /usr/share/inkscape/extensions/flatten.py
-  /usr/share/inkscape/extensions/fretfind.py
+  /usr/share/inkscape/extensions/fractalize.inx
+  /usr/share/inkscape/extensions/fractalize.py
+  /usr/share/inkscape/extensions/funcplot.inx
+  /usr/share/inkscape/extensions/funcplot.py
+  /usr/share/inkscape/extensions/g2pngs.inx
+  /usr/share/inkscape/extensions/g2pngs.py
   /usr/share/inkscape/extensions/gimp_xcf.inx
   /usr/share/inkscape/extensions/gimp_xcf.py
   /usr/share/inkscape/extensions/handles.inx
@@ -141,20 +192,33 @@ Files included in the binary package:
   /usr/share/inkscape/extensions/inkex.py
   /usr/share/inkscape/extensions/inkscape-shadow-white.sh
   /usr/share/inkscape/extensions/inkscape-shadow.sh
+  /usr/share/inkscape/extensions/inkscape_help_commandline.inx
+  /usr/share/inkscape/extensions/inkscape_help_faq.inx
+  /usr/share/inkscape/extensions/inkscape_help_manual.inx
+  /usr/share/inkscape/extensions/inkscape_help_relnotes.inx
+  /usr/share/inkscape/extensions/inkscape_help_reportabug.inx
+  /usr/share/inkscape/extensions/inkscape_help_svgspec.inx
   /usr/share/inkscape/extensions/interp.inx
   /usr/share/inkscape/extensions/interp.py
-  /usr/share/inkscape/extensions/kochify.inx
-  /usr/share/inkscape/extensions/kochify.py
-  /usr/share/inkscape/extensions/kochify_load.inx
-  /usr/share/inkscape/extensions/kochify_load.py
   /usr/share/inkscape/extensions/lindenmayer.inx
   /usr/share/inkscape/extensions/lindenmayer.py
+  /usr/share/inkscape/extensions/lorem_ipsum.inx
+  /usr/share/inkscape/extensions/lorem_ipsum.py
+  /usr/share/inkscape/extensions/markers_strokepaint.inx
+  /usr/share/inkscape/extensions/markers_strokepaint.py
   /usr/share/inkscape/extensions/measure.inx
   /usr/share/inkscape/extensions/measure.py
   /usr/share/inkscape/extensions/motion.inx
   /usr/share/inkscape/extensions/motion.py
+  /usr/share/inkscape/extensions/outline2svg.inx
+  /usr/share/inkscape/extensions/outline2svg.pl
+  /usr/share/inkscape/extensions/pathalongpath.inx
+  /usr/share/inkscape/extensions/pathalongpath.py
+  /usr/share/inkscape/extensions/pathmodifier.py
   /usr/share/inkscape/extensions/pdf_output.inx.txt
   /usr/share/inkscape/extensions/pdf_output_via_gs_on_win32.inx.txt
+  /usr/share/inkscape/extensions/perspective.inx
+  /usr/share/inkscape/extensions/perspective.py
   /usr/share/inkscape/extensions/ps2dxf.sh
   /usr/share/inkscape/extensions/ps2epsi.sh
   /usr/share/inkscape/extensions/ps2pdf.cmd
@@ -167,7 +231,9 @@ Files included in the binary package:
   /usr/share/inkscape/extensions/randompos.inx
   /usr/share/inkscape/extensions/rtree.inx
   /usr/share/inkscape/extensions/rtree.py
+  /usr/share/inkscape/extensions/rubberstretch.py
   /usr/share/inkscape/extensions/simplepath.py
+  /usr/share/inkscape/extensions/simplepath.rb
   /usr/share/inkscape/extensions/simplestyle.py
   /usr/share/inkscape/extensions/sk2svg.sh
   /usr/share/inkscape/extensions/sk_input.inx
@@ -183,8 +249,12 @@ Files included in the binary package:
   /usr/share/inkscape/extensions/svgz_output.inx
   /usr/share/inkscape/extensions/txt2svg.inx
   /usr/share/inkscape/extensions/txt2svg.pl
-  /usr/share/inkscape/extensions/wavy.inx
-  /usr/share/inkscape/extensions/wavy.py
+  /usr/share/inkscape/extensions/webbrowser_commandline.py
+  /usr/share/inkscape/extensions/webbrowser_faq.py
+  /usr/share/inkscape/extensions/webbrowser_manual.py
+  /usr/share/inkscape/extensions/webbrowser_relnotes.py
+  /usr/share/inkscape/extensions/webbrowser_reportabug.py
+  /usr/share/inkscape/extensions/webbrowser_svgspec.py
   /usr/share/inkscape/extensions/whirl.inx
   /usr/share/inkscape/extensions/whirl.py
   /usr/share/inkscape/extensions/wmf_input.inx
@@ -195,10 +265,15 @@ Files included in the binary package:
   /usr/share/inkscape/icons/README.icon_themes
   /usr/share/inkscape/icons/README.legacy_icons
   /usr/share/inkscape/icons/icons.svg
+  /usr/share/inkscape/icons/inkscape.file.png
+  /usr/share/inkscape/icons/inkscape.file.svg
   /usr/share/inkscape/icons/inkscape.svg
   /usr/share/inkscape/icons/legacy_icons.svg
+  /usr/share/inkscape/keys/adobe-illustrator-cs2.xml
   /usr/share/inkscape/keys/default.xml
   /usr/share/inkscape/keys/inkscape.xml
+  /usr/share/inkscape/keys/macromedia-freehand-mx.xml
+  /usr/share/inkscape/keys/right-handed-illustration.xml
   /usr/share/inkscape/keys/xara.xml
   /usr/share/inkscape/markers/markers.svg
   /usr/share/inkscape/palettes/Blues.gpl
@@ -212,31 +287,44 @@ Files included in the binary package:
   /usr/share/inkscape/palettes/Royal.gpl
   /usr/share/inkscape/palettes/Tango-Palette.gpl
   /usr/share/inkscape/palettes/Topographic.gpl
+  /usr/share/inkscape/palettes/Ubuntu.gpl
   /usr/share/inkscape/palettes/inkscape.gpl
   /usr/share/inkscape/palettes/svg.gpl
   /usr/share/inkscape/palettes/webhex.gpl
   /usr/share/inkscape/palettes/websafe22.gpl
+  /usr/share/inkscape/palettes/windows.gpl
   /usr/share/inkscape/patterns/README
+  /usr/share/inkscape/screens/about.bg.svg
   /usr/share/inkscape/screens/about.svg
+  /usr/share/inkscape/screens/keys.de.svg
   /usr/share/inkscape/screens/keys.fr.svg
   /usr/share/inkscape/screens/keys.sl.svg
   /usr/share/inkscape/screens/keys.svg
   /usr/share/inkscape/templates/A4.svg
   /usr/share/inkscape/templates/A4_landscape.svg
   /usr/share/inkscape/templates/CD_cover_300dpi.svg
+  /usr/share/inkscape/templates/DVD_cover_regular_300dpi.svg
+  /usr/share/inkscape/templates/DVD_cover_slim_300dpi.svg
+  /usr/share/inkscape/templates/DVD_cover_superslim_300dpi.svg
+  /usr/share/inkscape/templates/DVD_cover_ultraslim_300dpi.svg
   /usr/share/inkscape/templates/Letter.svg
   /usr/share/inkscape/templates/Letter_landscape.svg
   /usr/share/inkscape/templates/README
   /usr/share/inkscape/templates/black_opaque.svg
+  /usr/share/inkscape/templates/business_card_85x54mm.svg
   /usr/share/inkscape/templates/business_card_90x50mm.svg
   /usr/share/inkscape/templates/default.ca.svg
   /usr/share/inkscape/templates/default.cs.svg
   /usr/share/inkscape/templates/default.de.svg
+  /usr/share/inkscape/templates/default.eo.svg
   /usr/share/inkscape/templates/default.es.svg
+  /usr/share/inkscape/templates/default.fi.svg
   /usr/share/inkscape/templates/default.fr.svg
   /usr/share/inkscape/templates/default.hu.svg
   /usr/share/inkscape/templates/default.it.svg
+  /usr/share/inkscape/templates/default.lt.svg
   /usr/share/inkscape/templates/default.pl.svg
+  /usr/share/inkscape/templates/default.pt_BR.svg
   /usr/share/inkscape/templates/default.svg
   /usr/share/inkscape/templates/default_mm.svg
   /usr/share/inkscape/templates/default_pt.svg
@@ -250,6 +338,9 @@ Files included in the binary package:
   /usr/share/inkscape/templates/icon_64x64.svg
   /usr/share/inkscape/templates/no_borders.svg
   /usr/share/inkscape/templates/no_layers.svg
+  /usr/share/inkscape/templates/video_HDTV_1920_1080.svg
+  /usr/share/inkscape/templates/video_NTSC_720_486.svg
+  /usr/share/inkscape/templates/video_PAL_720_576.svg
   /usr/share/inkscape/templates/web_banner_468x60.svg
   /usr/share/inkscape/templates/web_banner_728x90.svg
   /usr/share/inkscape/templates/white_opaque.svg
@@ -259,45 +350,75 @@ Files included in the binary package:
   /usr/share/inkscape/tutorials/oldguitar.jpg
   /usr/share/inkscape/tutorials/potrace-de.png
   /usr/share/inkscape/tutorials/potrace-fr.png
+  /usr/share/inkscape/tutorials/potrace-pt_BR.png
+  /usr/share/inkscape/tutorials/potrace-ru.png
   /usr/share/inkscape/tutorials/potrace.png
   /usr/share/inkscape/tutorials/tutorial-advanced.ca.svg
+  /usr/share/inkscape/tutorials/tutorial-advanced.cs.svg
+  /usr/share/inkscape/tutorials/tutorial-advanced.de.svg
   /usr/share/inkscape/tutorials/tutorial-advanced.es.svg
   /usr/share/inkscape/tutorials/tutorial-advanced.fr.svg
   /usr/share/inkscape/tutorials/tutorial-advanced.ja.svg
+  /usr/share/inkscape/tutorials/tutorial-advanced.pt_BR.svg
+  /usr/share/inkscape/tutorials/tutorial-advanced.ru.svg
   /usr/share/inkscape/tutorials/tutorial-advanced.sl.svg
   /usr/share/inkscape/tutorials/tutorial-advanced.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.bg.svg
   /usr/share/inkscape/tutorials/tutorial-basic.ca.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.cs.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.da.svg
   /usr/share/inkscape/tutorials/tutorial-basic.de.svg
   /usr/share/inkscape/tutorials/tutorial-basic.es.svg
   /usr/share/inkscape/tutorials/tutorial-basic.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.it.svg
   /usr/share/inkscape/tutorials/tutorial-basic.ja.svg
   /usr/share/inkscape/tutorials/tutorial-basic.nn.svg
+  /usr/share/inkscape/tutorials/tutorial-basic.pt_BR.svg
   /usr/share/inkscape/tutorials/tutorial-basic.ru.svg
   /usr/share/inkscape/tutorials/tutorial-basic.sl.svg
   /usr/share/inkscape/tutorials/tutorial-basic.svg
   /usr/share/inkscape/tutorials/tutorial-calligraphy.ca.svg
+  /usr/share/inkscape/tutorials/tutorial-calligraphy.cs.svg
+  /usr/share/inkscape/tutorials/tutorial-calligraphy.de.svg
   /usr/share/inkscape/tutorials/tutorial-calligraphy.es.svg
   /usr/share/inkscape/tutorials/tutorial-calligraphy.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-calligraphy.pt_BR.svg
+  /usr/share/inkscape/tutorials/tutorial-calligraphy.ru.svg
   /usr/share/inkscape/tutorials/tutorial-calligraphy.sl.svg
   /usr/share/inkscape/tutorials/tutorial-calligraphy.svg
+  /usr/share/inkscape/tutorials/tutorial-elements.ca.svg
+  /usr/share/inkscape/tutorials/tutorial-elements.de.svg
   /usr/share/inkscape/tutorials/tutorial-elements.es.svg
   /usr/share/inkscape/tutorials/tutorial-elements.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-elements.pt_BR.svg
+  /usr/share/inkscape/tutorials/tutorial-elements.ru.svg
   /usr/share/inkscape/tutorials/tutorial-elements.sl.svg
   /usr/share/inkscape/tutorials/tutorial-elements.svg
   /usr/share/inkscape/tutorials/tutorial-shapes.ca.svg
+  /usr/share/inkscape/tutorials/tutorial-shapes.cs.svg
+  /usr/share/inkscape/tutorials/tutorial-shapes.de.svg
   /usr/share/inkscape/tutorials/tutorial-shapes.es.svg
   /usr/share/inkscape/tutorials/tutorial-shapes.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-shapes.it.svg
   /usr/share/inkscape/tutorials/tutorial-shapes.ja.svg
+  /usr/share/inkscape/tutorials/tutorial-shapes.pt_BR.svg
+  /usr/share/inkscape/tutorials/tutorial-shapes.ru.svg
   /usr/share/inkscape/tutorials/tutorial-shapes.sl.svg
   /usr/share/inkscape/tutorials/tutorial-shapes.svg
+  /usr/share/inkscape/tutorials/tutorial-tips.ca.svg
+  /usr/share/inkscape/tutorials/tutorial-tips.de.svg
   /usr/share/inkscape/tutorials/tutorial-tips.es.svg
   /usr/share/inkscape/tutorials/tutorial-tips.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-tips.pt_BR.svg
+  /usr/share/inkscape/tutorials/tutorial-tips.ru.svg
   /usr/share/inkscape/tutorials/tutorial-tips.sl.svg
   /usr/share/inkscape/tutorials/tutorial-tips.svg
   /usr/share/inkscape/tutorials/tutorial-tracing.ca.svg
   /usr/share/inkscape/tutorials/tutorial-tracing.de.svg
   /usr/share/inkscape/tutorials/tutorial-tracing.es.svg
   /usr/share/inkscape/tutorials/tutorial-tracing.fr.svg
+  /usr/share/inkscape/tutorials/tutorial-tracing.pt_BR.svg
+  /usr/share/inkscape/tutorials/tutorial-tracing.ru.svg
   /usr/share/inkscape/tutorials/tutorial-tracing.sl.svg
   /usr/share/inkscape/tutorials/tutorial-tracing.svg
   /usr/share/inkscape/tutorials/tux.png
@@ -309,25 +430,34 @@ Files included in the binary package:
   /usr/share/locale/am/LC_MESSAGES/inkscape.mo
   /usr/share/locale/az/LC_MESSAGES/inkscape.mo
   /usr/share/locale/be/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/bg/LC_MESSAGES/inkscape.mo
   /usr/share/locale/ca/LC_MESSAGES/inkscape.mo
   /usr/share/locale/cs/LC_MESSAGES/inkscape.mo
   /usr/share/locale/da/LC_MESSAGES/inkscape.mo
   /usr/share/locale/de/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/dz/LC_MESSAGES/inkscape.mo
   /usr/share/locale/el/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/en_CA/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/en_GB/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/en_US@piglatin/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/eo/LC_MESSAGES/inkscape.mo
   /usr/share/locale/es/LC_MESSAGES/inkscape.mo
   /usr/share/locale/es_MX/LC_MESSAGES/inkscape.mo
   /usr/share/locale/et/LC_MESSAGES/inkscape.mo
-  /usr/share/locale/eu/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/fi/LC_MESSAGES/inkscape.mo
   /usr/share/locale/fr/LC_MESSAGES/inkscape.mo
   /usr/share/locale/ga/LC_MESSAGES/inkscape.mo
   /usr/share/locale/gl/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/hr/LC_MESSAGES/inkscape.mo
   /usr/share/locale/hu/LC_MESSAGES/inkscape.mo
   /usr/share/locale/it/LC_MESSAGES/inkscape.mo
   /usr/share/locale/ja/LC_MESSAGES/inkscape.mo
   /usr/share/locale/ko/LC_MESSAGES/inkscape.mo
   /usr/share/locale/lt/LC_MESSAGES/inkscape.mo
   /usr/share/locale/mk/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/mn/LC_MESSAGES/inkscape.mo
   /usr/share/locale/nb/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/ne/LC_MESSAGES/inkscape.mo
   /usr/share/locale/nl/LC_MESSAGES/inkscape.mo
   /usr/share/locale/nn/LC_MESSAGES/inkscape.mo
   /usr/share/locale/pa/LC_MESSAGES/inkscape.mo
@@ -335,11 +465,14 @@ Files included in the binary package:
   /usr/share/locale/pt/LC_MESSAGES/inkscape.mo
   /usr/share/locale/pt_BR/LC_MESSAGES/inkscape.mo
   /usr/share/locale/ru/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/rw/LC_MESSAGES/inkscape.mo
   /usr/share/locale/sk/LC_MESSAGES/inkscape.mo
   /usr/share/locale/sl/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/sq/LC_MESSAGES/inkscape.mo
   /usr/share/locale/sr/LC_MESSAGES/inkscape.mo
   /usr/share/locale/sr@Latn/LC_MESSAGES/inkscape.mo
   /usr/share/locale/sv/LC_MESSAGES/inkscape.mo
+  /usr/share/locale/th/LC_MESSAGES/inkscape.mo
   /usr/share/locale/tr/LC_MESSAGES/inkscape.mo
   /usr/share/locale/uk/LC_MESSAGES/inkscape.mo
   /usr/share/locale/vi/LC_MESSAGES/inkscape.mo
@@ -353,6 +486,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 0.45-1 -----
+Version bump.
 
 ----- version 0.44.1-1 -----
 Version bump.
