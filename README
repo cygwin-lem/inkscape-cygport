@@ -39,7 +39,7 @@ Build requirements:
   autoconf2.5-2.61-1
   automake1.9-1.9.6-2
   binutils-20060817-1
-  cygport-0.2.9-1
+  cygport-0.2.11-1
   gawk-3.1.5-4
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
@@ -57,15 +57,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack inkscape-0.45-1-src.tar.bz2
+  unpack inkscape-0.45.1-1-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./inkscape-0.45-1.cygport all
+  cygport ./inkscape-0.45.1-1.cygport all
 
 This will create:
-  /usr/src/inkscape-0.45-1-src.tar.bz2
-  /usr/src/inkscape-0.45-1.tar.bz2
+  /usr/src/inkscape-0.45.1-1-src.tar.bz2
+  /usr/src/inkscape-0.45.1-1.tar.bz2
 
 -------------------------------------------
 
@@ -75,15 +75,15 @@ Files included in the binary package:
   /usr/bin/inkscape.exe
   /usr/bin/inkview.exe
   /usr/share/applications/inkscape.desktop
-  /usr/share/doc/Cygwin/inkscape-0.45.README
-  /usr/share/doc/inkscape-0.45/AUTHORS
-  /usr/share/doc/inkscape-0.45/COPYING
-  /usr/share/doc/inkscape-0.45/COPYING.LIB
-  /usr/share/doc/inkscape-0.45/ChangeLog
-  /usr/share/doc/inkscape-0.45/HACKING.txt
-  /usr/share/doc/inkscape-0.45/INSTALL
-  /usr/share/doc/inkscape-0.45/NEWS
-  /usr/share/doc/inkscape-0.45/README
+  /usr/share/doc/Cygwin/inkscape-0.45.1.README
+  /usr/share/doc/inkscape-0.45.1/AUTHORS
+  /usr/share/doc/inkscape-0.45.1/COPYING
+  /usr/share/doc/inkscape-0.45.1/COPYING.LIB
+  /usr/share/doc/inkscape-0.45.1/ChangeLog
+  /usr/share/doc/inkscape-0.45.1/HACKING.txt
+  /usr/share/doc/inkscape-0.45.1/INSTALL
+  /usr/share/doc/inkscape-0.45.1/NEWS
+  /usr/share/doc/inkscape-0.45.1/README
   /usr/share/inkscape/clipart/README
   /usr/share/inkscape/clipart/README-ribbon.txt
   /usr/share/inkscape/clipart/inkscape.logo.svg
@@ -486,6 +486,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 0.45.1-1 -----
+Version bump.
 
 ----- version 0.45-1 -----
 Version bump.
