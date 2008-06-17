@@ -1,0 +1,23 @@
+inherit gnome2
+
+DESCRIPTION="GNOME SVG drawing tool"
+HOMEPAGE="http://www.inkscape.org/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+PATCH_URI="
+	mirror://portage/media-gfx/${PN}/files/${P}-gcc43.patch
+	mirror://portage/media-gfx/${PN}/files/${P}-poppler-0.8.3.patch
+"
+
+# DIFF_EXCLUDES="Info.plist inkscape.spec"
+
+CYGCONF_ARGS="
+	--enable-inkboard
+	--enable-lcms
+	--with-gnome-print
+	--with-gnome-vfs
+	--with-gtkspell
+	--with-inkjar
+	--with-perl
+	--with-python
+	--with-xft
+"
