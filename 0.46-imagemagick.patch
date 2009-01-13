@@ -1,6 +1,6 @@
 --- origsrc/inkscape-0.46/configure.ac	2008-03-10 23:47:01.000000000 -0500
-+++ src/inkscape-0.46/configure.ac	2008-06-16 18:12:41.250000000 -0500
-@@ -561,18 +561,16 @@
++++ src/inkscape-0.46/configure.ac	2009-01-12 14:31:58.046500000 -0600
+@@ -561,18 +561,16 @@ dnl ******************************
  dnl Check for ImageMagick Magick++ 
  dnl ******************************
  
@@ -28,7 +28,7 @@
  dnl ******************************
  dnl   Unconditional dependencies
 --- origsrc/inkscape-0.46/src/Makefile.am	2008-03-10 23:44:31.000000000 -0500
-+++ src/inkscape-0.46/src/Makefile.am	2008-06-16 18:12:41.265625000 -0500
++++ src/inkscape-0.46/src/Makefile.am	2009-01-12 14:31:58.062125000 -0600
 @@ -14,17 +14,19 @@
  AUTOMAKE_OPTIONS = 1.7 subdir-objects
  
@@ -50,24 +50,3 @@
  	-I$(top_srcdir)/cxxtest
  
  include Makefile_insert
---- origsrc/inkscape-0.46/src/util/ucompose.hpp	2008-03-10 23:20:47.000000000 -0500
-+++ src/inkscape-0.46/src/util/ucompose.hpp	2008-06-16 18:12:41.296875000 -0500
-@@ -44,6 +44,10 @@
- #include <list>
- #include <map>			// for multimap
- 
-+#if defined(__CYGWIN__) && !defined(_GLIBCXX_USE_WSTRING)
-+namespace std { typedef basic_string<wchar_t> wstring; }
-+#endif
-+
- namespace UStringPrivate
- {
-   // the actual composition class - using String::ucompose is cleaner, so we
---- origsrc/inkscape-0.46/utf8-to-roff	2008-03-10 23:20:51.000000000 -0500
-+++ src/inkscape-0.46/utf8-to-roff	2008-06-16 18:12:41.328125000 -0500
-@@ -1,4 +1,4 @@
--#! /usr/bin/perl -w -CI
-+#! /usr/bin/perl -w
- # Converts a man page from utf8 (not understood by groff 1.18) to groff escapes.
- # I couldn't find any existing tool to convert from utf8 to groff, though I
- # seem to recall seeing some code to do so somewhere.

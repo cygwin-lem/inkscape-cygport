@@ -1,9 +1,9 @@
 category: Gnome Graphics
-requires: cygwin cairomm10 gdk-pixbuf2 glib2 glibmm24 gnome-vfs2 gtk2-x11 gtkmm24 gtkspell libMagick1 libX11_6 libcairo2 libfontconfig1 libfreetype26 libgc1 libintl8 liblcms1 libpng12 libpoppler-glib_3 libpoppler3 libpopt0 libsigc++20 libxml2 libxslt libwpg01 openssl pango perl perl-SVG perl-SVG-Parser perl-XML-XQL python python-lxml python-numpy python-xml zlib
+requires: cygwin libatkmm1.6_1 libcairo2 libcairomm1.0_1 libfontconfig1 libfreetype26 libgc1 libgdk_pixbuf2.0_0 libglib2.0_0 libglibmm2.4_1 libgnomevfs2_0 libgtk2.0_0 libgtkmm2.4_1 libgtkspell0 libintl8 liblcms1 libMagick1 libpango1.0_0 libpangomm1.4_1 libpng12 libpoppler-glib_4 libpoppler4 libpopt0 libsigc2.0_0 libwpg01 libX11_6 libxml2 libxslt openssl perl perl-SVG perl-SVG-Parser perl-XML-XQL python python-lxml python-numpy python-xml zlib
 sdesc: "GNOME SVG drawing tool"
 ldesc: "Inkscape is an open source drawing tool with capabilities similar to
 Illustrator, Freehand, and CorelDraw that uses the W3C standard scalable
-vector graphics  format (SVG). Some supported SVG features include
+vector graphics format (SVG). Some supported SVG features include
 basic shapes, paths, text, markers, clones, alpha blending, transforms,
 gradients, and grouping. In addition, Inkscape supports Creative Commons
 meta-data, node-editing, layers, complex path operations, text-on-path,

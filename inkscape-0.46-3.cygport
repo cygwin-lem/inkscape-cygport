@@ -6,14 +6,18 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 PATCH_URI="
 	mirror://portage/media-gfx/${PN}/files/${P}-gcc43.patch
 	mirror://portage/media-gfx/${PN}/files/${P}-poppler-0.8.3.patch
+	mirror://portage/media-gfx/${PN}/files/${P}-bug-174720-0.patch
+	mirror://portage/media-gfx/${PN}/files/${P}-bug-174720-1.patch
+	mirror://portage/media-gfx/${PN}/files/${P}-bug-214171.patch
+	0.46-imagemagick.patch
+	0.46-gtk-single-includes.patch
+	0.46-perl-args.patch
+	0.46-wstring.patch
 "
-
-# DIFF_EXCLUDES="Info.plist inkscape.spec"
 
 CYGCONF_ARGS="
 	--enable-inkboard
 	--enable-lcms
-	--with-gnome-print
 	--with-gnome-vfs
 	--with-gtkspell
 	--with-inkjar

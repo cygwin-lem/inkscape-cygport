@@ -1,0 +1,13 @@
+--- origsrc/inkscape-0.46/src/util/ucompose.hpp	2008-03-10 23:20:47.000000000 -0500
++++ src/inkscape-0.46/src/util/ucompose.hpp	2009-01-12 14:31:58.062125000 -0600
+@@ -44,6 +44,10 @@
+ #include <list>
+ #include <map>			// for multimap
+ 
++#if !defined(_GLIBCXX_USE_WSTRING)
++namespace std { typedef basic_string<wchar_t> wstring; }
++#endif
++
+ namespace UStringPrivate
+ {
+   // the actual composition class - using String::ucompose is cleaner, so we
