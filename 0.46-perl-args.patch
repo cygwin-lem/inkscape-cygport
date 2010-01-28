@@ -1,8 +1,0 @@
---- origsrc/inkscape-0.46/utf8-to-roff	2008-03-10 23:20:51.000000000 -0500
-+++ src/inkscape-0.46/utf8-to-roff	2009-01-12 14:31:58.077750000 -0600
-@@ -1,4 +1,4 @@
--#! /usr/bin/perl -w -CI
-+#! /usr/bin/perl -w
- # Converts a man page from utf8 (not understood by groff 1.18) to groff escapes.
- # I couldn't find any existing tool to convert from utf8 to groff, though I
- # seem to recall seeing some code to do so somewhere.
