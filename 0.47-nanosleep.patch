@@ -1,0 +1,13 @@
+src/dom/util/thread.cpp: In static member function ‘static void org::w3c::dom::util::Thread::sleep(long unsigned int)’:
+src/dom/util/thread.cpp:110: error: ‘nanosleep’ was not declared in this scope
+
+--- origsrc/inkscape-0.47/src/dom/util/thread.cpp	2009-11-16 11:29:10.000000000 -0600
++++ src/inkscape-0.47/src/dom/util/thread.cpp	2010-06-25 04:08:00.786457300 -0500
+@@ -36,6 +36,7 @@
+ #include "thread.h"
+ #include <stdio.h>
+ #include <string.h>
++#include <time.h>
+ 
+ namespace org
+ {
