@@ -1,0 +1,7 @@
+inherit gnome2
+
+DESCRIPTION="GNOME SVG drawing tool"
+HOMEPAGE="http://www.inkscape.org/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+
+PATCH_URI="0.47-nanosleep.patch"

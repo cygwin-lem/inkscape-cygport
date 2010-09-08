@@ -1,9 +1,0 @@
-inherit gnome2
-
-DESCRIPTION="GNOME SVG drawing tool"
-HOMEPAGE="http://www.inkscape.org/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
-
-# http://bugs.launchpad.net/inkscape/+bug/487038
-PATCH_URI="http://launchpadlibrarian.net/38318820/poppler-GfxColorSpace-definition-change.patch"
-PATCH_URI+=" 0.47-nanosleep.patch"
