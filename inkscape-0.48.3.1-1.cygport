@@ -1,0 +1,12 @@
+inherit gnome2
+
+DESCRIPTION="GNOME SVG drawing tool"
+HOMEPAGE="http://www.inkscape.org/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+
+PATCH_URI="
+	fedora/inkscape-0.48.2-png.patch
+	fedora/inkscape-0.48.2-png-write.patch
+	fedora/inkscape-0.48.2-poppler_020.patch
+	fedora/inkscape-0.48.2-types.patch
+"
