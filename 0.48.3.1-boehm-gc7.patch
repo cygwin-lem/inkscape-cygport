@@ -1,0 +1,34 @@
+--- origsrc/inkscape-0.48.3.1/configure.ac	2012-10-11 23:51:20.361394300 -0500
++++ src/inkscape-0.48.3.1/configure.ac	2012-10-12 00:05:29.236687800 -0500
+@@ -253,31 +253,6 @@ AC_CHECK_HEADERS([gc.h gc/gc.h],
+ 				  break], [gc_ok=no], [$gc_libs])
+ 		    break],
+                  [gc_ok=no])
+-if test "x$gc_ok" = "xyes" && test "x$cross_compiling" = "xno" ; then 
+-	AC_MSG_CHECKING([libgc version 6.4+])
+-	AC_RUN_IFELSE(
+-		[AC_LANG_SOURCE([[
+-			#ifdef HAVE_GC_GC_H
+-			# include <gc/gc.h>
+-			#else
+-			# include <gc.h>
+-			#endif
+-			#include <stdio.h>
+-			extern unsigned GC_version;
+-			int main(void){
+-				unsigned min = ((6 << 16) | (4 << 8) | 0);
+-				printf("%d.%d.%d ",GC_version >> 16, (GC_version >> 8) & 0xFF, GC_version & 0xFF);
+-				if (GC_version>=min) return 0;
+-				return 1;
+-			}]])],
+-		[gc_ok=yes],
+-		[gc_ok=no]
+-	)
+-	AC_MSG_RESULT([$gc_ok])
+-fi
+-if test "x$gc_ok" != "xyes"; then
+-	AC_MSG_ERROR([libgc (the Boehm Conservative Collector) 6.4+, is needed to compile inkscape -- http://www.hpl.hp.com/personal/Hans_Boehm/gc])
+-fi
+ 
+ dnl This check is to get a FIONREAD definition on Solaris 8
+ AC_CHECK_HEADERS([sys/filio.h])

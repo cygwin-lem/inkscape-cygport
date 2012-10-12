@@ -1,0 +1,25 @@
+inherit gnome2 python
+
+NAME="inkscape"
+VERSION=0.48.3.1
+RELEASE=2
+CATEGORY="Graphics"
+SUMMARY="GNOME SVG drawing tool"
+DESCRIPTION="Inkscape is an open source drawing tool that uses the W3C standard
+scalable vector graphics format (SVG). Some supported SVG features include
+basic shapes, paths, text, markers, clones, alpha blending, transforms,
+gradients, and grouping. In addition, Inkscape supports Creative Commons
+meta-data, node-editing, layers, complex path operations, text-on-path,
+and SVG XML editing. It also imports several formats like EPS, Postscript,
+JPEG, PNG, BMP, and TIFF and exports PNG as well as multiple vector-based
+formats."
+HOMEPAGE="http://www.inkscape.org/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+
+PATCH_URI="
+	fedora/inkscape-0.48.2-png.patch
+	fedora/inkscape-0.48.2-png-write.patch
+	fedora/inkscape-0.48.2-poppler_020.patch
+	fedora/inkscape-0.48.2-types.patch
+	0.48.3.1-boehm-gc7.patch
+"
