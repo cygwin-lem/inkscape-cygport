@@ -1,8 +1,8 @@
 inherit gnome2 python
 
 NAME="inkscape"
-VERSION=0.48.3.1
-RELEASE=3
+VERSION=0.48.4
+RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="GNOME SVG drawing tool"
 DESCRIPTION="Inkscape is an open source drawing tool that uses the W3C standard
@@ -17,9 +17,6 @@ HOMEPAGE="http://www.inkscape.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 PATCH_URI="
-	fedora/inkscape-0.48.2-png.patch
-	fedora/inkscape-0.48.2-png-write.patch
-	fedora/inkscape-0.48.2-poppler_020.patch
 	fedora/inkscape-0.48.2-types.patch
 	0.48.3.1-boehm-gc7.patch
 "
