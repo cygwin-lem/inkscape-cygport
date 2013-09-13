@@ -1,0 +1,24 @@
+GLib-GObject-WARNING **: invalid cast from `SPSelectContext' to `SPLPEToolContext'
+
+--- origsrc/inkscape-0.48.4/src/widgets/toolbox.cpp	2011-07-08 13:25:09.468790000 -0500
++++ src/inkscape-0.48.4/src/widgets/toolbox.cpp	2013-09-13 09:50:49.687934100 -0500
+@@ -5806,7 +5806,7 @@ static void lpetool_toggle_show_bbox(Gtk
+     bool show = gtk_toggle_action_get_active( act );
+     prefs->setBool("/tools/lpetool/show_bbox",  show);
+ 
+-    if (tools_isactive(desktop, TOOLS_LPETOOL)) {
++    if (SP_IS_LPETOOL_CONTEXT(desktop->event_context)) {
+         SPLPEToolContext *lc = SP_LPETOOL_CONTEXT(desktop->event_context);
+         lpetool_context_reset_limiting_bbox(lc);
+     }
+@@ -5820,8 +5820,8 @@ static void lpetool_toggle_show_measurin
+     }
+ 
+     GtkAction *unitact = static_cast<GtkAction*>(g_object_get_data(tbl, "lpetool_units_action"));
+-    SPLPEToolContext *lc = SP_LPETOOL_CONTEXT(desktop->event_context);
+-    if (tools_isactive(desktop, TOOLS_LPETOOL)) {
++    if (SP_IS_LPETOOL_CONTEXT(desktop->event_context)) {
++        SPLPEToolContext *lc = SP_LPETOOL_CONTEXT(desktop->event_context);
+         Inkscape::Preferences *prefs = Inkscape::Preferences::get();
+         bool show = gtk_toggle_action_get_active( act );
+         prefs->setBool("/tools/lpetool/show_measuring_info",  show);
