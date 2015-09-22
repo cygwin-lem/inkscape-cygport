@@ -2,7 +2,7 @@ inherit gnome2 python
 
 NAME="inkscape"
 VERSION=0.91
-RELEASE=2
+RELEASE=3
 CATEGORY="Graphics"
 SUMMARY="GNOME SVG drawing tool"
 DESCRIPTION="Inkscape is an open source drawing tool that uses the W3C standard
@@ -24,3 +24,5 @@ PATCH_URI="
 
 # uses --export-dynamic inside, does not use libtool
 LDFLAGS+=" -Wl,--export-all-symbols"
+
+DIFF_EXCLUDES="inkdbus.pc"
