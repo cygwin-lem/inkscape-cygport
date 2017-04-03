@@ -1,8 +1,8 @@
 inherit gnome2 python
 
 NAME="inkscape"
-VERSION=0.91
-RELEASE=5
+VERSION=0.92.1
+RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="GNOME SVG drawing tool"
 DESCRIPTION="Inkscape is an open source drawing tool that uses the W3C standard
@@ -14,17 +14,13 @@ and SVG XML editing. It also imports several formats like EPS, Postscript,
 JPEG, PNG, BMP, and TIFF and exports PNG as well as multiple vector-based
 formats."
 HOMEPAGE="http://www.inkscape.org/"
-SRC_URI="https://inkscape.org/en/gallery/item/3860/inkscape-${VERSION}.tar.bz2"
+SRC_URI="https://inkscape.org/en/gallery/item/10682/inkscape-${VERSION}.tar_XlpI7qT.bz2#/inkscape-${VERSION}.tar.bz2"
 PATCH_URI="
-	fedora/inkscape-0.48.2-types.patch
-	fedora/inkscape-0.91-desktop.patch
-	fedora/inkscape-0.91-drop-wait-for-targets.patch
-	0.91-cygwin-compile.patch
+	0.92.1-cygwin-compile.patch
 	0.91-gettext.patch
 "
 
-# C++11 required by glibmm-2.46
-CXXFLAGS+=" -std=gnu++11"
+CPPFLAGS+=" -D_GNU_SOURCE"
 # uses --export-dynamic inside, does not use libtool
 LDFLAGS+=" -Wl,--export-all-symbols"
 CYGCONF_ARGS="
@@ -34,4 +30,4 @@ CYGCONF_ARGS="
 	--without-gnome-vfs
 "
 
-DIFF_EXCLUDES="inkdbus.pc"
+DIFF_EXCLUDES="inkdbus.pc share"

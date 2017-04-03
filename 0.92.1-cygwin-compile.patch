@@ -1,0 +1,60 @@
+--- origsrc/inkscape-0.92.1/src/live_effects/lpe-fillet-chamfer.cpp	2017-02-13 17:46:57.000000000 -0600
++++ src/inkscape-0.92.1/src/live_effects/lpe-fillet-chamfer.cpp	2017-04-03 09:41:38.692775000 -0500
+@@ -73,7 +73,7 @@ LPEFilletChamfer::LPEFilletChamfer(LiveP
+     registerParameter(&only_selected);
+     registerParameter(&hide_knots);
+ 
+-    radius.param_set_range(0., infinity());
++    radius.param_set_range(0., Geom::infinity());
+     radius.param_set_increments(1, 1);
+     radius.param_set_digits(4);
+     radius.param_overwrite_widget(true);
+@@ -81,7 +81,7 @@ LPEFilletChamfer::LPEFilletChamfer(LiveP
+     chamfer_steps.param_set_increments(1, 1);
+     chamfer_steps.param_set_digits(0);
+     chamfer_steps.param_overwrite_widget(true);
+-    helper_size.param_set_range(0, infinity());
++    helper_size.param_set_range(0, Geom::infinity());
+     helper_size.param_set_increments(5, 5);
+     helper_size.param_set_digits(0);
+     helper_size.param_overwrite_widget(true);
+@@ -221,7 +221,7 @@ void LPEFilletChamfer::toggleFlexFixed()
+         radius.param_set_range(0., 100);
+         radius.param_set_value(0);
+     } else {
+-        radius.param_set_range(0., infinity());
++        radius.param_set_range(0., Geom::infinity());
+         radius.param_set_value(0);
+     }
+     fillet_chamfer_values.param_set_and_write_new_value(result);
+--- origsrc/inkscape-0.92.1/src/live_effects/parameter/filletchamferpointarray.cpp	2017-02-13 17:46:57.000000000 -0600
++++ src/inkscape-0.92.1/src/live_effects/parameter/filletchamferpointarray.cpp	2017-04-03 09:49:30.001633800 -0500
+@@ -727,7 +727,7 @@ Point FilletChamferPointArrayParamKnotHo
+     using namespace Geom;
+ 
+     if (!valid_index(_index)) {
+-        return Point(infinity(), infinity());
++        return Point(Geom::infinity(), Geom::infinity());
+     }
+ 
+     Piecewise<D2<SBasis> > const &pwd2 = _pparam->get_pwd2();
+--- origsrc/inkscape-0.92.1/src/live_effects/parameter/powerstrokepointarray.cpp	2017-02-13 17:46:57.000000000 -0600
++++ src/inkscape-0.92.1/src/live_effects/parameter/powerstrokepointarray.cpp	2017-04-03 02:19:03.100309800 -0500
+@@ -173,7 +173,7 @@ PowerStrokePointArrayParamKnotHolderEnti
+     using namespace Geom;
+ 
+     if (!valid_index(_index)) {
+-        return Geom::Point(infinity(), infinity());
++        return Geom::Point(Geom::infinity(), Geom::infinity());
+     }
+ 
+     Piecewise<D2<SBasis> > const & pwd2 = _pparam->get_pwd2();
+@@ -182,7 +182,7 @@ PowerStrokePointArrayParamKnotHolderEnti
+     Point offset_point = _pparam->_vector.at(_index);
+     if (offset_point[X] > pwd2.size() || offset_point[X] < 0) {
+         g_warning("Broken powerstroke point at %f, I won't try to add that", offset_point[X]);
+-        return Geom::Point(infinity(), infinity());
++        return Geom::Point(Geom::infinity(), Geom::infinity());
+     }
+     Point canvas_point = pwd2.valueAt(offset_point[X]) + offset_point[Y] * n.valueAt(offset_point[X]);
+     return canvas_point;
