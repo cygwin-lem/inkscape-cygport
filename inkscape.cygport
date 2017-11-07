@@ -1,7 +1,7 @@
 inherit gnome2 python
 
 NAME="inkscape"
-VERSION=0.92.1
+VERSION=0.92.2
 RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="GNOME SVG drawing tool"
@@ -14,7 +14,7 @@ and SVG XML editing. It also imports several formats like EPS, Postscript,
 JPEG, PNG, BMP, and TIFF and exports PNG as well as multiple vector-based
 formats."
 HOMEPAGE="http://www.inkscape.org/"
-SRC_URI="https://inkscape.org/en/gallery/item/10682/inkscape-${VERSION}.tar_XlpI7qT.bz2#/inkscape-${VERSION}.tar.bz2"
+SRC_URI="https://inkscape.org/en/gallery/item/11254/inkscape-${VERSION}.tar.bz2"
 PATCH_URI="
 	0.92.1-cygwin-compile.patch
 	0.91-gettext.patch
