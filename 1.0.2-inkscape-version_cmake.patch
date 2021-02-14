@@ -1,0 +1,20 @@
+--- origsrc/inkscape-e86c870879/CMakeScripts/inkscape-version.cmake	2021-01-16 00:43:56.000000000 +0900
++++ src/inkscape-e86c870879/CMakeScripts/inkscape-version.cmake
+@@ -38,6 +38,17 @@
+         OUTPUT_VARIABLE DEB_VERSION
+         OUTPUT_STRIP_TRAILING_WHITESPACE)
+     set(INKSCAPE_REVISION "${DEB_VERSION}")
++elseif(EXISTS ${INKSCAPE_SOURCE_DIR}/cygport/inkscape.revision)
++    # workaround for cygwin packaging by cygport (where we have no repo)
++    execute_process(COMMAND sed -e s+.*/++ inkscape.revision
++        WORKING_DIRECTORY ${INKSCAPE_SOURCE_DIR}/cygport
++        OUTPUT_VARIABLE INKSCAPE_REVISION_HASH
++        OUTPUT_STRIP_TRAILING_WHITESPACE)
++    execute_process(COMMAND sed -e s+T.*++ inkscape.revision
++        WORKING_DIRECTORY ${INKSCAPE_SOURCE_DIR}/cygport
++        OUTPUT_VARIABLE INKSCAPE_REVISION_DATE
++        OUTPUT_STRIP_TRAILING_WHITESPACE)
++    set(INKSCAPE_REVISION "${INKSCAPE_REVISION_HASH}, ${INKSCAPE_REVISION_DATE}")
+ endif()
+ 
+ if(NOT "${INKSCAPE_BINARY_DIR}" STREQUAL "")
