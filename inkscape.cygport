@@ -1,33 +1,230 @@
-inherit gnome2 python
+################################################################
+__current_pkg() {
+  THIS_PN="$1"
+}
 
-NAME="inkscape"
-VERSION=0.92.3
+__add_pkg() {
+  THIS_PN="$1"
+  PKG_NAMES+=" ${THIS_PN}"
+}
+
+__set_pkg_property() {
+  local LOCAL_PN="$1"
+  if [ -z "${LOCAL_PN//[-+\._]/}" ]; then
+    LOCAL_PN="${THIS_PN}"
+  fi
+  local LOCAL_VN="${LOCAL_PN//[-+\.]/_}"
+  printf -v "${LOCAL_VN}_$2" "%s" "$3"
+}
+
+__append_pkg_property() {
+  local LOCAL_PN="$1"
+  if [ -z "${LOCAL_PN//[-+\._]/}" ]; then
+    LOCAL_PN="${THIS_PN}"
+  fi
+  local LOCAL_VN="${LOCAL_PN//[-+\.]/_}"
+  local LOCAL_VN_PROPERTY="${LOCAL_VN}_$2"
+  printf -v "${LOCAL_VN_PROPERTY}" "%s" "${!LOCAL_VN_PROPERTY}$3"
+}
+
+################################################################
+inherit cmake
+
+################################
+NAME=inkscape
+VERSION=1.0.2
 RELEASE=1
+
+################################
 CATEGORY="Graphics"
 SUMMARY="GNOME SVG drawing tool"
-DESCRIPTION="Inkscape is an open source drawing tool that uses the W3C standard
-scalable vector graphics format (SVG). Some supported SVG features include
-basic shapes, paths, text, markers, clones, alpha blending, transforms,
-gradients, and grouping. In addition, Inkscape supports Creative Commons
-meta-data, node-editing, layers, complex path operations, text-on-path,
-and SVG XML editing. It also imports several formats like EPS, Postscript,
-JPEG, PNG, BMP, and TIFF and exports PNG as well as multiple vector-based
-formats."
-HOMEPAGE="http://www.inkscape.org/"
-SRC_URI="https://inkscape.org/en/gallery/item/12187/inkscape-${VERSION}.tar.bz2"
-PATCH_URI="
-	0.92.1-cygwin-compile.patch
-	0.91-gettext.patch
+DESCRIPTION="\
+Inkscape is an open source drawing tool that uses the W3C standard
+scalable vector graphics format (SVG). Some supported SVG features
+include basic shapes, paths, text, markers, clones, alpha blending,
+transforms, gradients, and grouping. In addition, Inkscape supports
+Creative Commons meta-data, node-editing, layers, complex path
+operations, text-on-path, and SVG XML editing. It also imports several
+formats like EPS, Postscript, JPEG, PNG, BMP, and TIFF and exports PNG
+as well as multiple vector-based formats.
+"
+HOMEPAGE="https://inkscape.org/"
+
+################################
+## Source from a git repository
+################################
+GIT_REPO="https://gitlab.com/inkscape/inkscape"
+declare -A GIT_DATEHASH_BY_NAME=(
+  [1.0.2]=2021-01-15T16:43:56+01:00/e86c870879 #310bfb4a9abee3e7fd65aef0408fd7
+  [1.0.1]=2020-09-07T05:28:13+00:00/3bc2e813f5 #84eda88fe02f2a851e66c0168df941
+)
+REV_HASH="${GIT_DATEHASH_BY_NAME[${VERSION}]#*/}"
+REV_DATE="${GIT_DATEHASH_BY_NAME[${VERSION}]%%/*}"
+REV_DATE_SHORT="${REV_DATE%T*}"
+GIT_BASENAME="${GIT_REPO##*/}"
+SRC_URI="${GIT_REPO}/-/archive/${REV_HASH}/${NAME}-${REV_HASH}.tar.bz2" # GitLab
+SRC_DIR="${GIT_BASENAME}-${REV_HASH}"
+
+################################
+## Patch files
+################################
+# Patch filenames are in a default style of 'git format-patch'
+PATCH_URI=$(\
+  find -maxdepth 1 -type f -name '[0-9][0-9][0-9][0-9]-*.patch' \
+  | sort \
+)
+# Additional patches, if any
+PATCH_URI+="\
+  1.0.2-avoid-ambiguous-calls.patch
+  1.0.2-get_program_name.patch
+  1.0.2-inkscape-version_cmake.patch
 "
 
-CPPFLAGS+=" -D_GNU_SOURCE"
-# uses --export-dynamic inside, does not use libtool
-LDFLAGS+=" -Wl,--export-all-symbols"
-CYGCONF_ARGS="
-	--enable-lcms
-	--enable-poppler-cairo
-	--enable-cdr --enable-visio --enable-wpg
-	--without-gnome-vfs
+DIFF_EXCLUDES="\
+  share\
+  cygport\
 "
 
-DIFF_EXCLUDES="inkdbus.pc share"
+################################
+## Settings for Inkscape
+################################
+
+# INKSCAPE_REVISION_HASH=${REV_HASH}
+# INKSCAPE_REVISION_DATE=${REV_DATE_SHORT}
+# INKSCAPE_REVISION="${REV_DATE_SHORT}, ${REV_HASH}, Cygwin"
+
+CYGCMAKE_ARGS="
+  -DCYGWIN:BOOL=ON
+  -DBUILD_SHARED_LIBS:BOOL=ON
+"
+CYGCMAKE_ARGS+="
+  -DWITH_DBUS:BOOL=OFF
+  -DENABLE_LCMS:BOOL=ON
+  -DWITH_SVG2:BOOL=ON
+  -DWITH_LPETOOL:BOOL=ON
+  -DWITH_OPENMP:BOOL=ON
+"
+CYGCMAKE_ARGS+="
+  -DENABLE_POPPLER:BOOL=ON
+  -DENABLE_POPPLER_CAIRO:BOOL=ON
+  -DWITH_IMAGE_MAGICK:BOOL=OFF
+  -DWITH_GRAPHICS_MAGICK:BOOL=ON
+  -DWITH_LIBCDR:BOOL=ON
+  -DWITH_LIBVISIO:BOOL=ON
+  -DWITH_LIBWPG:BOOL=ON
+  -DWITH_GTKSPELL:BOOL=ON
+  -DWITH_NLS:BOOL=ON
+  -DWITH_MANPAGE_COMPRESSION:BOOL=ON
+"
+
+################################
+## Requirements for building
+################################
+BUILD_REQUIRES="\
+  pkg-config\
+  cmake\
+  ninja\
+\
+  libdbus1-devel\
+  libdbus-glib_1-devel\
+  liblcms2-devel\
+  libpoppler-devel\
+  libcairo-devel\
+  GraphicsMagick\
+  libGraphicsMagick-devel\
+  libcdr0.1-devel\
+  libvisio0.1-devel\
+  libwpg0.3-devel\
+  libgtkspell3-devel\
+  gettext-devel\
+\
+  libgc-devel\
+  libharfbuzz-devel\
+  libpango1.0-devel\
+  libfontconfig-devel\
+  libgsl-devel\
+  libglib2.0-devel\
+  libsoup2.4-devel\
+  libdouble-conversion-devel\
+  libpoppler-glib-devel\
+  libjpeg-devel\
+  libpng-devel\
+  libpotrace-devel\
+  libgtkmm3.0-devel\
+  libgdl3-devel\
+  libboost-devel\
+  aspell\
+  libaspell-devel\
+  libxslt-devel\
+  libxml2-devel\
+  libXext-devel\
+\
+  adwaita-icon-theme-devel\
+"
+
+################################
+## ABI
+ABI=0
+
+################################
+## Contents of our packages
+################################
+# main package
+__add_pkg "${NAME}"
+__set_pkg_property . CONTENTS "\
+  etc/ \
+  usr/bin/ \
+  usr/share/doc/${NAME}/ \
+  usr/share/applications \
+  usr/share/metainfo \
+"
+#  --exclude=*.dll \
+__set_pkg_property . REQUIRES "\
+  ${NAME}-common \
+  adwaita-icon-theme \
+"
+
+################################
+# common (noarch)
+__add_pkg "${NAME}-common"
+__set_pkg_property . SUMMARY "${SUMMARY% *} (common)"
+__set_pkg_property . CONTENTS "\
+  usr/share/inkscape/ \
+  usr/share/bash-completion/ \
+  usr/share/icons/ \
+  usr/share/locale/ \
+  usr/share/man/ \
+"
+
+################################
+src_compile() {
+  cd ${S}
+  mkdir -p cygport
+  printf "%s" "${GIT_DATEHASH_BY_NAME[${VERSION}]}" > ./cygport/inkscape.revision
+
+  cd ${B}
+  : ${CYGCMAKE_GENERATOR=Ninja}
+  cygcmake
+  if [ -f build.ninja ]
+  then
+    cygninja
+  else
+    cygmake
+  fi
+}
+
+################################
+src_install() {
+  cd ${B}
+  if [ -f build.ninja ]
+  then
+    ninja_install
+  else
+    cyginstall
+  fi
+
+  # An unnecessary devel file
+  rm -f ${D}/usr/lib/libinkscape_base.dll.a
+}
+
+################################

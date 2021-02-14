@@ -1,0 +1,42 @@
+--- origsrc/inkscape-e86c870879/src/live_effects/lpe-embrodery-stitch-ordering.cpp	2021-01-16 00:43:56.000000000 +0900
++++ src/inkscape-e86c870879/src/live_effects/lpe-embrodery-stitch-ordering.cpp
+@@ -198,7 +198,7 @@
+         // find closest point to p
+         unsigned iBest = 0;
+         bool revBest = false;
+-        Coord distBest = infinity();
++        Coord distBest = Geom::infinity();
+ 
+         for (std::vector<OrderingInfo>::iterator it = infos.begin(); it != infos.end(); ++it) {
+             it->index = it - infos.begin();
+@@ -255,8 +255,8 @@
+     // This implementation is not terribly elegant (unSTLish).
+     // But for the first 2 elements using e.g. partial_sort is not simpler.
+ 
+-    Coord dist0 = infinity();
+-    Coord dist1 = infinity();
++    Coord dist0 = Geom::infinity();
++    Coord dist1 = Geom::infinity();
+     nearest[0] = nullptr;
+     nearest[1] = nullptr;
+ 
+--- origsrc/inkscape-e86c870879/src/live_effects/parameter/powerstrokepointarray.cpp	2021-01-16 00:43:56.000000000 +0900
++++ src/inkscape-e86c870879/src/live_effects/parameter/powerstrokepointarray.cpp
+@@ -198,7 +198,7 @@
+     using namespace Geom;
+ 
+     if (!valid_index(_index)) {
+-        return Geom::Point(infinity(), infinity());
++        return Geom::Point(Geom::infinity(), Geom::infinity());
+     }
+ 
+     Piecewise<D2<SBasis> > const & pwd2 = _pparam->get_pwd2();
+@@ -207,7 +207,7 @@
+     Point offset_point = _pparam->_vector.at(_index);
+     if (offset_point[X] > pwd2.size() || offset_point[X] < 0) {
+         g_warning("Broken powerstroke point at %f, I won't try to add that", offset_point[X]);
+-        return Geom::Point(infinity(), infinity());
++        return Geom::Point(Geom::infinity(), Geom::infinity());
+     }
+     Point canvas_point = pwd2.valueAt(offset_point[X]) + (offset_point[Y] * _pparam->_scale_width) * n.valueAt(offset_point[X]);
+     return canvas_point;
