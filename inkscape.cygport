@@ -49,6 +49,7 @@ formats like EPS, Postscript, JPEG, PNG, BMP, and TIFF and exports PNG
 as well as multiple vector-based formats.
 "
 HOMEPAGE="https://inkscape.org/"
+LICENSE="GPL-2.0-or-later"
 
 ################################
 ## Source from a git repository
