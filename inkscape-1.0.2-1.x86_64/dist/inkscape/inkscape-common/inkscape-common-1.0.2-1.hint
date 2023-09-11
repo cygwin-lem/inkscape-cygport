@@ -1,0 +1,14 @@
+category: Graphics
+requires: 
+sdesc: "GNOME SVG drawing (common)"
+ldesc: "Inkscape is an open source drawing tool that uses the W3C standard
+scalable vector graphics format (SVG). Some supported SVG features
+include basic shapes, paths, text, markers, clones, alpha blending,
+transforms, gradients, and grouping. In addition, Inkscape supports
+Creative Commons meta-data, node-editing, layers, complex path
+operations, text-on-path, and SVG XML editing. It also imports several
+formats like EPS, Postscript, JPEG, PNG, BMP, and TIFF and exports PNG
+as well as multiple vector-based formats.
+"
+external-source: inkscape
+

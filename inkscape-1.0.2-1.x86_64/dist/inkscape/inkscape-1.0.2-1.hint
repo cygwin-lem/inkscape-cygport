@@ -1,0 +1,13 @@
+category: Graphics
+requires: cygwin libaspell15 libatkmm1.6_1 libcairo2 libcairomm1.0_1 libcdr0.1_1 libdouble-conversion3 libfontconfig1 libfreetype6 libgc1 libgcc1 libgdk_pixbuf2.0_0 libgdl3_5 libglib2.0_0 libglibmm2.4_1 libgomp1 libGraphicsMagick++12 libgsl19 libgtk3_0 libgtkmm3.0_1 libgtkspell3_3_0 libharfbuzz0 libiconv2 libintl8 libjpeg8 liblcms2_2 libpango1.0_0 libpangomm1.4_1 libpng16 libpoppler-glib8 libpoppler106 libpotrace0 librevenge0.0_0 libsigc2.0_0 libsoup2.4_1 libstdc++6 libvisio0.1_1 libwpg0.3_3 libX11_6 libxml2 libxslt zlib0 inkscape-common adwaita-icon-theme
+sdesc: "GNOME SVG drawing tool"
+ldesc: "Inkscape is an open source drawing tool that uses the W3C standard
+scalable vector graphics format (SVG). Some supported SVG features
+include basic shapes, paths, text, markers, clones, alpha blending,
+transforms, gradients, and grouping. In addition, Inkscape supports
+Creative Commons meta-data, node-editing, layers, complex path
+operations, text-on-path, and SVG XML editing. It also imports several
+formats like EPS, Postscript, JPEG, PNG, BMP, and TIFF and exports PNG
+as well as multiple vector-based formats.
+"
+
