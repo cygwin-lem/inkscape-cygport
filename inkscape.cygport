@@ -15,7 +15,35 @@ JPEG, PNG, BMP, and TIFF and exports PNG as well as multiple vector-based
 formats."
 HOMEPAGE="http://www.inkscape.org/"
 LICENSE="GPL-2.0-or-later"
-SRC_URI="https://inkscape.org/en/gallery/item/12187/inkscape-${VERSION}.tar.bz2"
+
+################################
+## Source from a git repository
+################################
+GIT_REPO="https://gitlab.com/inkscape/inkscape"
+declare -A GIT_DATEHASH_BY_NAME=(
+  # git log --date=iso-strict --format='%cd/%H' -1
+  [1.3]=2023-07-21T14:21:08+02:00/INKSCAPE_1_3
+  [1.2.2]=2022-12-01T22:43:02+01:00/INKSCAPE_1_2_2
+  [1.2.1]=2022-07-14T16:20:51+02:00/INKSCAPE_1_2_1
+  [1.2]=2022-05-15T00:03:37+02:00/INKSCAPE_1_2
+  [1.1.2]=2022-02-04T22:12:35+00:00/INKSCAPE_1_1_2
+  [1.1.1]=2021-09-20T17:44:36+00:00/INKSCAPE_1_1_1
+  [1.1]=2021-05-24T00:39:34+02:00/INKSCAPE_1_1
+  [1.0.2]=2021-01-15T16:43:56+01:00/INKSCAPE_1_0_2
+  [1.0.1]=2020-09-07T05:28:13+00:00/INKSCAPE_1_0_1
+  [1.0]=2020-05-01T12:29:13+02:00/INKSCAPE_1_0
+  [0.92.5]=2020-04-08T17:14:36+00:00/INKSCAPE_0_92_5
+  [0.92.4]=2019-01-14T20:39:13-08:00/INKSCAPE_0_92_4
+  [0.92.3]=2018-03-11T13:39:40-07:00/INKSCAPE_0_92_3
+)
+REV_HASH="${GIT_DATEHASH_BY_NAME[${VERSION}]#*/}"
+REV_DATE="${GIT_DATEHASH_BY_NAME[${VERSION}]%%/*}"
+REV_DATE_SHORT="${REV_DATE%T*}"
+GIT_BASENAME="${GIT_REPO##*/}"
+SRC_URI="${GIT_REPO}/-/archive/${REV_HASH}/${NAME}-${REV_HASH}.tar.bz2" # GitLab
+SRC_DIR="${GIT_BASENAME}-${REV_HASH}"
+
+
 PATCH_URI="
 	0.92.1-cygwin-compile.patch
 	0.91-gettext.patch
