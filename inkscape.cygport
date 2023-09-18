@@ -1,7 +1,7 @@
 inherit gnome2 python3
 
 NAME="inkscape"
-VERSION=0.92.3
+VERSION=0.92.4
 RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="GNOME SVG drawing tool"
