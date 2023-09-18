@@ -14,6 +14,7 @@ and SVG XML editing. It also imports several formats like EPS, Postscript,
 JPEG, PNG, BMP, and TIFF and exports PNG as well as multiple vector-based
 formats."
 HOMEPAGE="http://www.inkscape.org/"
+LICENSE="GPL-2.0-or-later"
 SRC_URI="https://inkscape.org/en/gallery/item/12187/inkscape-${VERSION}.tar.bz2"
 PATCH_URI="
 	0.92.1-cygwin-compile.patch
