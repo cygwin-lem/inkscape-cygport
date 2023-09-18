@@ -49,6 +49,48 @@ PATCH_URI="
 	0.91-gettext.patch
 "
 
+################################
+## Requirements for building
+################################
+BUILD_REQUIRES="\
+  pkg-config\
+  libdbus1-devel\
+  libdbus-glib_1-devel\
+  liblcms2-devel\
+  libpoppler-devel\
+  libcairo-devel\
+  GraphicsMagick\
+  libGraphicsMagick-devel\
+  libcdr0.1-devel\
+  libvisio0.1-devel\
+  libwpg0.3-devel\
+  libgtkspell3-devel\
+  gettext-devel\
+\
+  libgc-devel\
+  libharfbuzz-devel\
+  libpango1.0-devel\
+  libfontconfig-devel\
+  libgsl-devel\
+  libglib2.0-devel\
+  libsoup2.4-devel\
+  libdouble-conversion-devel\
+  libpoppler-glib-devel\
+  libjpeg-devel\
+  libpng-devel\
+  libpotrace-devel\
+  libgtkmm2.4-devel\
+  libgdl3-devel\
+  libboost-devel\
+  aspell\
+  libaspell-devel\
+  libxslt-devel\
+  libxml2-devel\
+  libXext-devel\
+\
+  adwaita-icon-theme-devel\
+"
+
 CPPFLAGS+=" -D_GNU_SOURCE"
 # uses --export-dynamic inside, does not use libtool
 LDFLAGS+=" -Wl,--export-all-symbols"
