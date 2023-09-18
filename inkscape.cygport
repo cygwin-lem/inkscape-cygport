@@ -1,4 +1,4 @@
-inherit gnome2 python
+inherit gnome2 python3
 
 NAME="inkscape"
 VERSION=0.92.3
